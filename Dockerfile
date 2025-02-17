@@ -18,11 +18,14 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Establecer el directorio de trabajo
 WORKDIR /var/www/html
 
-# Copiar el código de Laravel al contenedor
-COPY . .
+# Copiar composer.json y composer.lock antes para aprovechar la caché de Docker
+COPY composer.json composer.lock ./
 
-# Instalar dependencias de Laravel
-RUN composer install --no-dev --optimize-autoloader
+# Instalar dependencias de Laravel con caché
+RUN composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
+
+# Luego copiar el resto del código
+COPY . .
 
 # Ajustar permisos para storage y bootstrap/cache
 RUN chmod -R 777 storage bootstrap/cache
