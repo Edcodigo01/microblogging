@@ -35,12 +35,12 @@ docker-compose up -d
 docker-compose exec app composer install
 ```
 
--Ejecutar las migraciones
+- Ejecutar las migraciones
 ```
 docker-compose exec app php artisan migrate --seed
 ```
 
-Para consumir la API, puede utilizar la colección de Postman junto con las variables de entorno disponibles en la raíz del repositorio. Esta configuración facilita la gestión automática de los tokens de sesión. En caso de no utilizarla, deberá incluir manualmente la siguiente cabecera en cada solicitud:
+Para consumir la API, puede utilizar la **colección de Postman** junto con las variables de entorno disponibles en la raíz del repositorio. Esta configuración facilita la gestión automática de los **tokens de sesión**. En caso de no utilizarla, deberá incluir manualmente la siguiente cabecera en cada solicitud:
 
 ```json
     {

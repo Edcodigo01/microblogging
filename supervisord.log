@@ -349,3 +349,6 @@
 2025-02-17 12:05:22,275 WARN exited: laravel-queue (exit status 255; not expected)
 2025-02-17 12:05:23,277 INFO gave up: laravel-queue entered FATAL state, too many start retries too quickly
 2025-02-17 12:07:27,403 INFO reaped unknown pid 271 (exit status 0)
+2025-02-17 12:30:14,825 WARN received SIGQUIT indicating exit request
+2025-02-17 12:30:14,827 INFO waiting for php-fpm to die
+2025-02-17 12:30:14,860 INFO stopped: php-fpm (exit status 0)
