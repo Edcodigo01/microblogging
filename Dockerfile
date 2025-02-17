@@ -10,20 +10,21 @@ RUN apt-get update && apt-get install -y \
     supervisor
 
 # Instalar la extensión de PostgreSQL para PHP (pdo y pdo_pgsql)
-RUN docker-php-ext-install pdo pdo_pgsql
-
+RUN docker-php-ext-install pdo pdo_pgsql bcmath mbstring
 # Instalar Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
+# RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+# Instalación Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Establecer el directorio de trabajo
 WORKDIR /var/www/html
 
-# Copiar composer.json y composer.lock antes para aprovechar la caché de Docker
+# Copiar composer.json y composer.lock antes para aprovechar la caché ade Docker
 COPY composer.json composer.lock ./
 
 # Instalar dependencias de Laravel con caché
 RUN composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
 
+RUN composer dump-autoload --optimize
 # Luego copiar el resto del código
 COPY . .
 

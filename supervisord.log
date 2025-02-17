@@ -258,3 +258,16 @@
 2025-02-17 11:22:44,805 WARN received SIGQUIT indicating exit request
 2025-02-17 11:22:44,807 INFO waiting for php-fpm to die
 2025-02-17 11:22:44,820 INFO stopped: php-fpm (exit status 0)
+2025-02-17 11:38:04,021 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-02-17 11:38:04,025 INFO supervisord started with pid 1
+2025-02-17 11:38:05,047 INFO spawned: 'laravel-queue' with pid 7
+2025-02-17 11:38:05,056 INFO spawned: 'php-fpm' with pid 8
+2025-02-17 11:38:05,291 WARN exited: laravel-queue (exit status 255; not expected)
+2025-02-17 11:38:06,319 INFO spawned: 'laravel-queue' with pid 11
+2025-02-17 11:38:06,321 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-02-17 11:38:06,341 WARN exited: laravel-queue (exit status 255; not expected)
+2025-02-17 11:38:08,357 INFO spawned: 'laravel-queue' with pid 12
+2025-02-17 11:38:08,379 WARN exited: laravel-queue (exit status 255; not expected)
+2025-02-17 11:38:11,395 INFO spawned: 'laravel-queue' with pid 13
+2025-02-17 11:38:11,428 WARN exited: laravel-queue (exit status 255; not expected)
+2025-02-17 11:38:12,431 INFO gave up: laravel-queue entered FATAL state, too many start retries too quickly
