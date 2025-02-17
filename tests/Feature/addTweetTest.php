@@ -26,7 +26,7 @@ class addTweetTest extends TestCase
         $access_token = $user->createToken($user->name . '-AuthToken')->plainTextToken;
 
         $data = [
-            'content' => "fake text CAMBIO CACHE",
+            'content' => "fake text",
         ];
 
         $response = $this->post('/api/users-tweets', $data, [
