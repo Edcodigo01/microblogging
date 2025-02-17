@@ -25,8 +25,6 @@ class Following extends Model
         });
 
         static::deleting(function ($flollowing) {
-            \Log::info($flollowing);
-
             $data = $flollowing;
             dispatch(new DeleteTweetsFriendRemovedJob($data->user_id, $data->following_id));
         });
