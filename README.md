@@ -8,22 +8,12 @@ Aplicación de **microblogging** con funcionalidades similares a las de Twitter,
 
 ## DESPLIEGUE
 
-- Clonar el repositorio:
+- Clonar el repositorio, ingresar al directorio descargado y crear .env a partir del archivo env.example, ya tiene las configuraciones necesarias.:
 ```
 git clone https://github.com/Edcodigo01/microblogging.git
-```
-
-- Ingresar al directorio descargado: 
-```
 cd microblogging
-```
-
-- Crear .env a partir del archivo env.example, ya tiene las configuraciones necesarias.
-
-```
 cp .env.example .env
 ```
-
 - Levantar contendores 
 
 ```
