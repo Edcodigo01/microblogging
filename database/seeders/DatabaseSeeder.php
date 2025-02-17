@@ -20,11 +20,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $usersTotal = 1000;
-        Cache::tags(["users-list-page", "followings-of-users-page", "users-tweets-followings", "users-tweets", "users", "user"])->flush();
         User::factory($usersTotal)->create();
         $this->addFollowing(1, 20, 10, $usersTotal);
         $this->addFollowing(21, $usersTotal, 3, $usersTotal);
         $this->addUserTweets($usersTotal);
+        Cache::tags(["users-list-page", "followings-of-users-page", "users-tweets-followings", "users-tweets", "users", "user"])->flush();
     }
 
     public function addFollowing($startId, $endId, $cantReg, $maxId)
