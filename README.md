@@ -6,7 +6,29 @@ Aplicación de **microblogging** con funcionalidades similares a las de Twitter,
 - PHP 8.2+
 - Docker y Docker Compose
 
-## INSTRUCCIONES DE DESPLIEGUE
+## DESPLIEGUE
+
+- Clonar el repositorio:
+´´´git clone https://github.com/Edcodigo01/microblogging.git´´´
+
+- Ingresar al directorio descargado: 
+´´´cd microblogging´´´
+
+- Crear .env a partir del archivo env.example, ya tiene las configuraciones necesarias.
+
+´´´cp .env.example .env´´´
+
+- Levantar contendores 
+
+´´´docker-compose up -d´´´
+
+- Instalar dependencias laravel
+´´´docker-compose exec app composer install´´´
+
+-Ejecutar las migraciones
+´´´docker-compose exec app php artisan migrate --seed´´´
+
+Para consumir la API, puedes utilizar la colección de Postman y las variables de entorno incluidas en la raíz de este repositorio. Esta configuración permite gestionar los tokens de sesión de forma automática.
 
 ## ENDPOINTS
 

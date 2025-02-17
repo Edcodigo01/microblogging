@@ -7,29 +7,26 @@ RUN apt-get update && apt-get install -y \
     curl \
     git \
     libpq-dev \
-    supervisor
+    supervisor \
+    && rm -rf /var/lib/apt/lists/*  # Limpiar caché de apt
 
 # Instalar la extensión de PostgreSQL para PHP (pdo y pdo_pgsql)
-RUN docker-php-ext-install pdo pdo_pgsql bcmath mbstring
+RUN docker-php-ext-install pdo pdo_pgsql
+
 # Instalar Composer
-# RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-# Instalación Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
 # Establecer el directorio de trabajo
 WORKDIR /var/www/html
 
-# Copiar composer.json y composer.lock antes para aprovechar la caché ade Docker
-COPY composer.json composer.lock ./
-
-# Instalar dependencias de Laravel con caché
-RUN composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
-
-RUN composer dump-autoload --optimize
-# Luego copiar el resto del código
+# Copiar el código de Laravel al contenedor
 COPY . .
 
-# Ajustar permisos para storage y bootstrap/cache
-RUN chmod -R 777 storage bootstrap/cache
+# Instalar dependencias de Laravel (sin dependencias de desarrollo y con autoload optimizado)
+RUN composer install --no-dev --optimize-autoloader --prefer-dist
+
+# Ajustar permisos para storage, bootstrap/cache y vendor
+RUN chmod -R 777 storage bootstrap/cache vendor
 
 # Asegurar que PHP-FPM escuche en 0.0.0.0:9000
 RUN sed -i 's/^listen = .*/listen = 0.0.0.0:9000/' /usr/local/etc/php-fpm.d/www.conf
