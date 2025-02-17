@@ -1,6 +1,6 @@
 # Microblogging Demo - Laravel 11
 
-Aplicación de **microblogging** con funcionalidades similares a las de Twitter, que permite a los usuarios seguir a otros, crear y publicar tweets, así como visualizar los tweets de los usuarios a los que siguen. **Optimizada** para manejar grandes volumenes de datos, a travez del diseño de **normalización de base de datos**, almacenamiento de **registros en cache**, y el uso de queu colas de laravel. para la **insercion de datos en segundo plano**.
+Aplicación de **microblogging** con funcionalidades similares a las de Twitter, que permite a los usuarios seguir a otros, crear y publicar tweets, así como visualizar los tweets de los usuarios a los que siguen. **Optimizada** para manejar grandes volumenes de datos, a travez del diseño de **desnormalización de base de datos**, almacenamiento de **registros en cache**, y el uso de queu colas de laravel. para la **insercion de datos en segundo plano**.
 
 ## REQUERIMIENTOS
 - PHP 8.2+
