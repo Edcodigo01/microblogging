@@ -132,3 +132,32 @@
 2025-02-15 22:17:22,083 INFO waiting for laravel-queue, php-fpm to die
 2025-02-15 22:17:22,087 INFO stopped: php-fpm (exit status 0)
 2025-02-15 22:17:22,091 WARN stopped: laravel-queue (terminated by SIGTERM)
+2025-02-17 03:46:05,844 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-02-17 03:46:05,850 INFO supervisord started with pid 1
+2025-02-17 03:46:06,855 INFO spawned: 'laravel-queue' with pid 7
+2025-02-17 03:46:06,859 INFO spawned: 'php-fpm' with pid 8
+2025-02-17 03:46:07,122 WARN exited: laravel-queue (exit status 255; not expected)
+2025-02-17 03:46:08,153 INFO spawned: 'laravel-queue' with pid 11
+2025-02-17 03:46:08,155 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-02-17 03:46:08,175 WARN exited: laravel-queue (exit status 255; not expected)
+2025-02-17 03:46:10,182 INFO spawned: 'laravel-queue' with pid 12
+2025-02-17 03:46:10,201 WARN exited: laravel-queue (exit status 255; not expected)
+2025-02-17 03:46:13,214 INFO spawned: 'laravel-queue' with pid 13
+2025-02-17 03:46:13,237 WARN exited: laravel-queue (exit status 255; not expected)
+2025-02-17 03:46:14,239 INFO gave up: laravel-queue entered FATAL state, too many start retries too quickly
+2025-02-17 03:50:24,592 WARN received SIGQUIT indicating exit request
+2025-02-17 03:50:24,592 INFO waiting for php-fpm to die
+2025-02-17 03:50:24,622 INFO stopped: php-fpm (exit status 0)
+2025-02-17 03:50:29,734 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-02-17 03:50:29,740 INFO supervisord started with pid 1
+2025-02-17 03:50:30,759 INFO spawned: 'laravel-queue' with pid 7
+2025-02-17 03:50:30,766 INFO spawned: 'php-fpm' with pid 8
+2025-02-17 03:50:30,874 WARN exited: laravel-queue (exit status 255; not expected)
+2025-02-17 03:50:31,885 INFO spawned: 'laravel-queue' with pid 11
+2025-02-17 03:50:31,887 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-02-17 03:50:31,921 WARN exited: laravel-queue (exit status 255; not expected)
+2025-02-17 03:50:33,929 INFO spawned: 'laravel-queue' with pid 12
+2025-02-17 03:50:33,948 WARN exited: laravel-queue (exit status 255; not expected)
+2025-02-17 03:50:36,960 INFO spawned: 'laravel-queue' with pid 13
+2025-02-17 03:50:36,993 WARN exited: laravel-queue (exit status 255; not expected)
+2025-02-17 03:50:37,995 INFO gave up: laravel-queue entered FATAL state, too many start retries too quickly
