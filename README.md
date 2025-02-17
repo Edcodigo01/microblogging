@@ -9,30 +9,38 @@ Aplicación de **microblogging** con funcionalidades similares a las de Twitter,
 ## DESPLIEGUE
 
 - Clonar el repositorio:
-´´´git clone https://github.com/Edcodigo01/microblogging.git´´´
+```
+git clone https://github.com/Edcodigo01/microblogging.git
+```
 
 - Ingresar al directorio descargado: 
-´´´cd microblogging´´´
+```
+cd microblogging
+```
 
 - Crear .env a partir del archivo env.example, ya tiene las configuraciones necesarias.
 
-´´´cp .env.example .env´´´
+```
+cp .env.example .env
+```
 
 - Levantar contendores 
 
-´´´docker-compose up -d´´´
+```
+docker-compose up -d
+```
 
 - Instalar dependencias laravel
-´´´docker-compose exec app composer install´´´
+```
+docker-compose exec app composer install
+```
 
 -Ejecutar las migraciones
-´´´docker-compose exec app php artisan migrate --seed´´´
+```
+docker-compose exec app php artisan migrate --seed
+```
 
-Para consumir la API, puedes utilizar la colección de Postman y las variables de entorno incluidas en la raíz de este repositorio. Esta configuración permite gestionar los tokens de sesión de forma automática.
-
-## ENDPOINTS
-
-En caso de no utilizar la colección de Postman que está en la raíz de este repositorio, deberá preparar cada solicitud con la siguiente cabecera:
+Para consumir la API, puede utilizar la colección de Postman junto con las variables de entorno disponibles en la raíz del repositorio. Esta configuración facilita la gestión automática de los tokens de sesión. En caso de no utilizarla, deberá incluir manualmente la siguiente cabecera en cada solicitud:
 
 ```json
     {
@@ -41,6 +49,8 @@ En caso de no utilizar la colección de Postman que está en la raíz de este re
             }
     }
 ```
+
+## ENDPOINTS
 
 ### AUTENTICACIÓN
 
